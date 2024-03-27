@@ -11,7 +11,7 @@ const GroceryList = () => {
 
   const fetchGroceries = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/groceries');
+      const response = await axios.get('https://grocery-server-geqm.onrender.com');
       setGroceries(response.data);
     } catch (error) {
       console.error('Error fetching groceries:', error);
@@ -20,8 +20,8 @@ const GroceryList = () => {
 
   const deleteGrocery = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/groceries/${id}`);
-      fetchGroceries(); // Refresh the grocery list after deletion
+      await axios.delete(`https://grocery-server-geqm.onrender.com/${id}`);
+      fetchGroceries();
     } catch (error) {
       console.error('Error deleting grocery:', error);
     }
