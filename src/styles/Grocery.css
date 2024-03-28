@@ -7,8 +7,8 @@
     text-align: center;
 }
 .items>img{
-    /* display: none; */
     width: 100%;
+    height: 350px;
     border-radius: 8px;
 }
 .items{
@@ -26,10 +26,18 @@
     cursor: pointer;
 }
 .add-grocery{
-    padding: 1% 2%;
+    padding: 0.5% 2%;
     margin: 0 2%;
     border-radius: 10px;
     align-self: last baseline;
+    transition: transform 0.3s ease-in-out;
+    font-size: 22px;
+}
+.add-grocery:hover{
+    transform: translateY(-3px);
+}
+.add-grocery>span{
+    font-size: 30px;
 }
 .grocery-main{
     display: flex;
@@ -37,4 +45,47 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+.add-form{
+    position: absolute;
+    height: 100vh;
+    width: 98vw;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-form>form{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid; */
+    border-radius: 10px;
+    background-color: white;
+    gap: 8px;
+    /* width: 35%; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 50%;
+    padding: 1%;
+}
+.blur-background {
+    filter: blur(5px); /* Apply a blur effect to the background */
+    transition: filter 0.3s ease; /* Add a transition effect for smoothness */
+  }
+.add-form>form>div>input{
+    width: 95%;
+    /* border: 1px solid; */
+    padding: 2%;
+    border-radius: 8px;
+}
+form>span{
+    align-self: last baseline;
+    font-size: 30px;
+    /* margin-right: 0; */
+}
+form>button{
+    align-self: last baseline;
+    padding: 2% 4%;
+    border-radius: 8px;
 }
