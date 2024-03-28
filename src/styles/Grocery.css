@@ -63,10 +63,10 @@
     /* border: 1px solid; */
     border-radius: 10px;
     background-color: white;
-    gap: 8px;
+    gap: 20px;
     /* width: 35%; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 50%;
+    width: 40%;
     padding: 1%;
 }
 .blur-background {
@@ -80,9 +80,15 @@
     border-radius: 8px;
 }
 form>span{
-    align-self: last baseline;
+    align-self: flex-end;
     font-size: 30px;
     /* margin-right: 0; */
+    /* border: 1px solid; */
+    cursor: pointer;
+    padding: 0 1.5%;
+}
+form>span:hover{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 form>button{
     align-self: last baseline;
