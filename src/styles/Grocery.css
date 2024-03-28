@@ -4,15 +4,12 @@
     column-gap: 2%;
     row-gap: 2%;
     padding: 0 2%;
+    text-align: center;
 }
 .items>img{
     /* display: none; */
     width: 100%;
-}
-.imges{
-    width: 100%;
-    border: 1px solid;
-    height: 30%;
+    border-radius: 8px;
 }
 .items{
     padding: 3%;
@@ -27,4 +24,17 @@
     /* color: white; */
     border: none;
     cursor: pointer;
+}
+.add-grocery{
+    padding: 1% 2%;
+    margin: 0 2%;
+    border-radius: 10px;
+    align-self: last baseline;
+}
+.grocery-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

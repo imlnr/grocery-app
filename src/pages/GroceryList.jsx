@@ -7,10 +7,16 @@ import "../styles/Grocery.css"
 const GroceryList = () => {
   const [groceries, setGroceries] = useState([]);
 
-  useEffect(() => {
-    fetchGroceries();
-  }, []);
-
+  const deleteGrocery = async (id) => {
+    try {
+      await axios.delete(`https://grocery-server-geqm.onrender.com/groceries/${id}`);
+      // fetchGroceries();
+      setGroceries(prevGroceries => prevGroceries.filter(grocery => grocery.id !== id));
+    } catch (error) {
+      console.error('Error deleting grocery:', error);
+    }
+  };
+  console.log("running");
   const fetchGroceries = async () => {
     try {
       const response = await axios.get('https://grocery-server-geqm.onrender.com/groceries');
@@ -19,35 +25,21 @@ const GroceryList = () => {
       console.error('Error fetching groceries:', error);
     }
   };
-
-  const deleteGrocery = async (id) => {
-    try {
-      await axios.delete(`https://grocery-server-geqm.onrender.com/groceries/${id}`);
-      fetchGroceries();
-    } catch (error) {
-      console.error('Error deleting grocery:', error);
-    }
-  };
-  useEffect(()=>{
+  useEffect(() => {
     fetchGroceries();
-  },[deleteGrocery])
+  }, []);
+
+  // useEffect(() => {
+  //   fetchGroceries();
+  // }, [deleteGrocery])
 
   return (
-    <div>
-      <h2>Grocery List</h2>
+    <div className='grocery-main'>
+      <h1>Grocery List</h1>
+      <button className='add-grocery'><span>+</span>Add Items</button>
       <div className='grocery-items'>
         {groceries.map((grocery) => (
-          // <li key={grocery.id}>
           <GroceryItems grocery={grocery} deleteGrocery={deleteGrocery} />
-          // <div>
-          //   <img src={grocery.image} alt={grocery.name} />
-          //   <h3>{grocery.name}</h3>
-          //   <p>Quantity: {grocery.qty}</p>
-          //   <p>Price: ${grocery.price}</p>
-          //   <p>Description: {grocery.description}</p>
-          //   <button onClick={() => deleteGrocery(grocery.id)}>Delete</button>
-          // </div>
-          // </li>
         ))}
       </div>
     </div>
