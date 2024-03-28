@@ -1,0 +1,30 @@
+.grocery-items{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 2%;
+    row-gap: 2%;
+    padding: 0 2%;
+}
+.items>img{
+    /* display: none; */
+    width: 100%;
+}
+.imges{
+    width: 100%;
+    border: 1px solid;
+    height: 30%;
+}
+.items{
+    padding: 3%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 8px;
+}
+.items>button{
+    width: 80%;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #febd69;
+    /* color: white; */
+    border: none;
+    cursor: pointer;
+}
